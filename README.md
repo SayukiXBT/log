@@ -1,25 +1,52 @@
-# typescript-boilerplate
+# TypeScript Colored Logger
 
-A quick start repo for typescript projects.
+A simple, colorful TypeScript logger with configurable log levels.
 
-Contains these tools:
+## Installation
 
-1. ts-node for executing typescript files
-2. Prettier for code formatting
-3. ESLint for linting
-4. .env for loading environment variables
-5. My favorite logging library, electron-log
+```bash
+npm install @your-scope/ts-logger
+```
 
-All of your typescript files should go in the `./src` directory, and the compiled javscript will be available at `./dist`.
+## Usage
 
-## Setup
+```typescript
+import { log, LogLevel } from "@your-scope/ts-logger";
 
--   Install the dependencies
+// Set the desired log level
+log.setLevel(LogLevel.DEBUG);
 
-`npm install`
+// Use different log levels
+log.debug("Debug message");
+log.info("Info message");
+log.warn("Warning message");
+log.error("Error message");
+log.send("Sending data...");
+log.recv("Receiving data...");
 
--   Start the project. Typescript will be compiled automatically.
+// Change log level to only show warnings and errors
+log.setLevel(LogLevel.WARN);
+```
 
-`npm start`
+## Log Levels
 
-You can now lint your project with `npm run lint`.
+The logger supports the following levels (from lowest to highest):
+
+-   `DEBUG` (0)
+-   `INFO` (1)
+-   `WARN` (2)
+-   `ERROR` (3)
+
+Messages will only be displayed if their level is greater than or equal to the current log level.
+
+## Features
+
+-   🎨 Colored output using chalk
+-   ⚡ TypeScript support with type definitions
+-   🔍 Configurable log levels
+-   🕒 Timestamp with millisecond precision
+-   📦 Zero dependencies (except chalk)
+
+## License
+
+MIT

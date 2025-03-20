@@ -1,16 +1,27 @@
 {
-    "name": "ts_boilerplate",
-    "version": "0.1.0",
-    "description": "Quick start for typescript projects",
-    "main": "./dist/index.js",
-    "author": "Sayuki0x <me@sayuki0x.net>",
+    "name": "@sayukixbt/log",
+    "version": "0.0.2",
+    "description": "simple logging library",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "SayukiXBT <hello@base32.org>",
     "license": "AGPL-3.0",
-    "private": true,
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "logger",
+        "typescript",
+        "console",
+        "chalk",
+        "colored-logger"
+    ],
     "scripts": {
         "start": "npx ts-node ./src/index.ts",
         "build": "node ./node_modules/typescript/bin/tsc",
         "format": "npx prettier . --ignore-path .gitignore --write --tab-width 4",
-        "lint": "npx eslint . --ext .ts"
+        "lint": "npx eslint . --ext .ts",
+        "prepare": "npm run build"
     },
     "devDependencies": {
         "@types/node": "^20.10.6",
@@ -21,8 +32,6 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "dotenv": "^16.3.1",
-        "electron-log": "^5.0.3",
-        "ts-node": "^10.9.2"
+        "chalk": "^4.1.2"
     }
 }
